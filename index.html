@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Add Creatives</title>
+</head>
+<body>
+<div class="split-container">
+    <!-- Left Container -->
+    <div id="left">
+        <div style="margin-top:50px; margin-left: 14px;">  
+            <h3>Filter By</h3>
+        </div>
+  <!-- Below code is for Seaching -->
+        <div class="row" style="margin-bottom: 5%;">
+            <div class="column">
+                <h4>color:</h4>
+                <div class="colors"> 
+                    <p class="circle"  style="background-color: #8a9b0f;"  onclick="searchColor(this)"></p>
+                    <p class="circle"  style="background-color: #99b2b7;" onclick="searchColor(this)"></p>
+                    <p class="circle"  style="background-color: #7b3b3b;"onclick="searchColor(this)"></p>
+                    <p class="circle"  style="background-color: #f4ead5;" onclick="searchColor(this)"></p>
+                </div>
+                
+                <div class="colors"> 
+                    <p class="circle"  style="background-color: #373b44;" onclick="searchColor(this)"></p>
+                    <p class="circle"  style="background-color: beige;" onclick="searchColor(this)"></p>
+                </div>  
+            </div>
+            <div class="column">
+                <h4>title/subtitle:</h4>  
+                <div class="search-container">
+                    <input type="text" id="search-button" onkeyup="searchBox()" placeholder="search across title & subtitle">
+                </div>
+            </div>
+        </div>
+        <!-- Code for progress bar -->
+        <div class="creatives-progress-bar" style="margin-left: 10px;">
+            <div class="progress-container">
+                <div class="progress-bar" id="progress"></div>
+            </div>
+            <div style="display:inline-flex; margin-top: 14px;"><div id="counter">0</div>
+            <div>/ 5 creatives</div>
+        </div>
+            
+        </div>
+        <!-- Add creative function which will trigger drawer -->
+         <button id="add-button" style="margin: 15px;"> + Add Creatives</button>
+
+        <div id="created-creatives"  class="created-creatives-container">
+        </div>
+
+    </div>
+    <!-- right container -->
+    <div class="drawer-container right">
+        <div class="drawer-content">
+            <span class="close-button" onclick="closeDrawer()">X</span>
+            <h2>Creative Creation</h2>
+            <br>
+            <br>
+            <div class="form-group">
+                <label for="title">title:</label>
+                <input type="text" id="title" placeholder="This is a title">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="subtitle">subtitle:</label>
+                <input type="text" id="subtitle" placeholder="This is a subtitle">
+            </div>
+            <div class="form-group">
+                <label for="color">background color:</label>
+                <div class="colors"> 
+                    <p class="circle"  style="background-color: #8a9b0f;"  onclick="selectColor(this)"></p>
+                    <p class="circle"  style="background-color: #99b2b7;" onclick="selectColor(this)"></p>
+                    <p class="circle"  style="background-color: #7b3b3b;"onclick="selectColor(this)"></p>
+                    <p class="circle"  style="background-color: #f4ead5;" onclick="selectColor(this)"></p>
+                </div>
+                
+                <div class="colors"> 
+                    <p class="circle"  style="background-color: #373b44;" onclick="selectColor(this)"></p>
+                    <p class="circle"  style="background-color: beige;" onclick="selectColor(this)"></p>
+                </div>           
+            </div>
+                <button id="done-button" onclick="addCreative()" disabled>Done</button>
+        </div>
+    </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
